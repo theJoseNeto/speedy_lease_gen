@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+        }
+
+        div {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+
+        div form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 50px 80px;
+            border-radius: 25px;
+        }
+
+        div form input {
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            border: 1px solid #ccc;
+        }
+
+        div form input[type="submit"] {
+            background-color: #2a2a2a;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+
+        .error-message {
+            background-color: rgb(206, 63, 63);
+            padding: 10px 30px;
+            color: white;
+            border-radius: 25px;
+        }
+
+        @keyframes vibrate {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(5px);
+            }
+        }
+
+        .vibrating {
+            animation: vibrate 0.2s 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <form action="/home" method="post">
+            <h1>
+
+          Entrar
+            </h1>
+            <input type="text" name="name" placeholder="Seu nome de usuário" >
+            <input type="password" name="password" placeholder="Sua senha" >
+            <input type="submit" value="Entrar">
+            <p>
+                ou, <a href="/register">crie uma conta.</a>
+            </p>
+
+        </form>
+
+        <% if (messages.error) { %>
+            <p class="error-message">
+                <%= messages.error  %>
+            </p>
+            <% } %>
+    </div>
+</body>
+
+</html>

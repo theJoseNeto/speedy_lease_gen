@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres_db:
+    image: postgres:latest
+    container_name: db_espeedy_lease_gen
+    restart: always
+    environment:
+      - POSTGRES_USER=ojotaneto
+      - POSTGRES_PASSWORD=doquevocetemfomemenino?21012106
+    ports:
+      - "15432:5432"
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+volumes:
+  postgres_db:
